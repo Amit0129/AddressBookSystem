@@ -84,11 +84,11 @@ namespace AddressBookSystem
         }
         public void Display()
         {
-            Console.WriteLine("\n");
+            // Console.WriteLine("\n");
             Console.WriteLine("Contacts in Your Device : ");
             foreach (var contact in addressList)
             {
-                Console.WriteLine($"First Name: {contact.FirstName} LastName: {contact.LastName} City: {contact.City} PhoneNumber: {contact.MobileNumber} Zip: {contact.Zip} Address: {contact.Address} EmailId: {contact.Email} State: {contact.State}");
+                Console.WriteLine($" First Name: {contact.FirstName} \n LastName: {contact.LastName} \n City: {contact.City} \n PhoneNumber: {contact.MobileNumber} \n Zip: {contact.Zip} \n Address: {contact.Address} \n EmailId: {contact.Email} State: {contact.State}");
             }
         }
     }
