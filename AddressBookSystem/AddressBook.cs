@@ -9,9 +9,9 @@ namespace AddressBookSystem
     internal class AddressBook
     {
         List<Contacts> addressList = new List<Contacts>();
-        public void AddContact(Contacts contacts)
+        public void AddContact(Contacts contact)
         {
-            addressList.Add(contacts);
+            addressList.Add(contact);
         }
         public void EditContact(string name)
         {
@@ -69,15 +69,26 @@ namespace AddressBookSystem
                 }
             }
         }
+        public void DeleteContact(string name)
+        {
+
+            foreach (var contact in addressList)
+            {
+                if (contact.FirstName == name || contact.LastName == name)
+                {
+                    addressList.Remove(contact);
+                }
+            }
+
+            Console.WriteLine(name + " contact is deleted from the Address Book");
+        }
         public void Display()
         {
             Console.WriteLine("\n");
             Console.WriteLine("Contacts in Your Device : ");
             foreach (var contact in addressList)
             {
-                //Console.WriteLine(contact.FirstName + "\t" + contact.LastName + "\t" + contact.City + "\t" + contact.MobileNumber + "\t" + contact.Zip + "\t" + contact.Address + "\t" + contact.Email + "\t" + contact.State);
                 Console.WriteLine($"First Name: {contact.FirstName} LastName: {contact.LastName} City: {contact.City} PhoneNumber: {contact.MobileNumber} Zip: {contact.Zip} Address: {contact.Address} EmailId: {contact.Email} State: {contact.State}");
-                Console.WriteLine();
             }
         }
     }
